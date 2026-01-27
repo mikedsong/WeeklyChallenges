@@ -83,26 +83,16 @@ namespace ChallengesWithTestsMark8
 
         public bool IsStringANumber(string input)
         {
-            string[] num = new string[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-            bool IsANumber = false;
-            for (int i = 0; i < input.Length; i++)
+            int IsANumber = 0;
+            try
             {
-                IsANumber = false;
-                foreach (var number in num)
-                {
-                    if (input.Substring(i, 1) == number)
-                    {
-                        IsANumber = true;
-                    }
-                }
-
-                if (!IsANumber)
-                {
-                    return false;
-                }
+                IsANumber = int.Parse(input);
+                return true;
             }
-
-            return true;
+            catch 
+            {
+                return false;
+            }
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
@@ -120,6 +110,10 @@ namespace ChallengesWithTestsMark8
 
         public double AverageEvens(int[] numbers)
         {
+            if (numbers == null)
+            {
+                return 0;
+            }
             int sum = 0;
             int count = 0;
             foreach (var number in numbers)
@@ -140,6 +134,10 @@ namespace ChallengesWithTestsMark8
 
         public int Factorial(int number)
         {
+            if (number <0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             int fact = 1;
             for (int i = 1; i <= number; i++)
             {
