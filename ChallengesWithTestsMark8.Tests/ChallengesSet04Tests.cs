@@ -241,7 +241,7 @@ namespace ChallengesWithTestsMark8.Tests
             Action actual3 = () => challenger.Factorial(negative3);
 
             // Assert
-            Assert.Throws<ArgumentOutOfRangeException>(actual1);
+            Assert.Throws<ArgumentOut OfRangeException>(actual1);
             Assert.Throws<ArgumentOutOfRangeException>(actual2);
             Assert.Throws<ArgumentOutOfRangeException>(actual3);
         }

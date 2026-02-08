@@ -83,10 +83,10 @@ namespace ChallengesWithTestsMark8
 
         public bool IsStringANumber(string input)
         {
-            int IsANumber = 0;
+            double isANumber = 0;
             try
             {
-                IsANumber = int.Parse(input);
+                isANumber = double.Parse(input);
                 return true;
             }
             catch 
